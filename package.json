@@ -1,0 +1,30 @@
+{
+  "name": "beatitup",
+  "version": "1.0.0",
+  "description": "For my project, I want to create a song visualizer that will visualize songs based on BPM/ highs/ lows, and “dance”/bounce with the music. I will allow users to upload their own music using .wav or .mp3 files to convert them into a string to play the music or users can select music from one of these APIs that I will try my best to implement: SoundCloud API, Youtube Audio Library API, and Jamendo API. Users will be able to use music controllers (play/pause, skip, previous, fastword, volume up and down) to control the music in various ways.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.29.1",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "regenerator-runtime": "^0.13.11",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
