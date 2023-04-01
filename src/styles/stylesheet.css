@@ -9,6 +9,11 @@ h1{
   font-weight:700;
 }
 
+h4{
+  font-size: 20px;
+  font-weight: 600;
+}
+
 header ul{
   display: flex;
   justify-content: space-around;
