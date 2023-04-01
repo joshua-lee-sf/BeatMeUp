@@ -31,6 +31,6 @@ Link to my github and LinkedIn
 
 ## Wireframe: 
 
-![wireframe](images/wireframe.png)
+![wireframe](assets/wireframe.png)
 
 
