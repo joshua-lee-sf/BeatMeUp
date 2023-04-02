@@ -28,7 +28,7 @@ function barVisualizer(){
 
 function drawer(bufferLength, xPos, barWidth, barHeight, dataArray){
   for (let i = 0; i < bufferLength; i++){
-    const hue = document.getElementById('hue-slider').value;
+    const hue = document.getElementById('hue-slider').value * i;
     const saturation = document.getElementById('saturation-slider').value;
     const lightness = document.getElementById('lightness-slider').value;
     barHeight = dataArray[i]
