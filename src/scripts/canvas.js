@@ -1,3 +1,11 @@
+//canvas setup
 const canvas = document.getElementById('visualizer-canvas');
-canvas.width = 1920;
-canvas.height = 980;
+const canvasCtx = canvas.getContext('2d');
+canvas.width = window.innerHeight; //might change
+canvas.height = window.innerWidth; // might change
+
+//audio set up
+let audioSource;
+let analyzer;
+let audioElementSrc;
+
