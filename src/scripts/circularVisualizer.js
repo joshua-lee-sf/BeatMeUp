@@ -32,7 +32,8 @@ function drawer(bufferLength, xPos, barWidth, barHeight, dataArray){
     canvasCtx.save()
     canvasCtx.translate(canvas.width/2, canvas.height/2);
     canvasCtx.rotate(i + Math.PI * 2/bufferLength)
-    const hue = document.getElementById('hue-slider').value * i;
+    let plainOrRainbow = document.getElementById('rainbow')
+    let hue = plainOrRainbow.value ? document.getElementById('hue-slider').value : document.getElementById('hue-slider').value * 5
     const saturation = document.getElementById('saturation-slider').value;
     const lightness = document.getElementById('lightness-slider').value;
     canvasCtx.fillStyle = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)';

@@ -1,4 +1,4 @@
-function barVisualizer(){
+function rectanglularVisualizer(){
   const audioContext = new AudioContext();
   const audioElement = document.getElementById('audio-element');
   audioElement.src = 123; //change this to the audio source of the element? Maybe in another function?
