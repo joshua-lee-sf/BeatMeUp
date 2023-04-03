@@ -1,5 +1,4 @@
 const youtubeAPI = 'https://thibaultjanbeyer.github.io/YouTube-Free-Audio-Library-API/api.json' ;
-let freeSoundAPI;
 
 function randomIdFinder(min,max){
   min = Math.ceil(min)
@@ -24,20 +23,6 @@ export async function fetchJamendoSound() {
   };
 }
 
-//bring into index.js
-let audioAPISelector = document.getElementById('music-api-selector')
-let generateRandomSound = document.getElementById('random-api-sound-generator')
-
-//bring into index.js
-audioAPISelector.addEventListener('change', function(){
-  if (audioAPISelector.value === 'jamendoAPI') {
-    generateRandomSound.addEventListener('click', fetchJamendoSound)
-  } else if (audioAPISelector.value === 'youtube-audio-library') {
-    generateRandomSound.addEventListener('click', fetchYoutubeSound)
-  } else {
-    generateRandomSound.addEventListener('click', 12345)
-  }
-})
 
 async function fetchYoutubeSound() {
   const youtubeAPI = 'https://thibaultjanbeyer.github.io/YouTube-Free-Audio-Library-API/api.json';
@@ -47,6 +32,19 @@ async function fetchYoutubeSound() {
     let randomId = randomIdFinder(0, 5142);
     let youtubeSoundKey = body.arr[randomId];
     console.log(body.map[youtubeSoundKey])
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+async function fetchFreeSound(){
+  let freeSoundId = randomIdFinder(6, 682339)
+  const freeSoundAPI = `https://freesound.org/apiv2/sounds/${freeSoundId}?token=pLZSsTz8kCtXTr1kK5S7IZ6byp7rnridddAgiPqL`
+  try {
+    let res = await fetch(freeSoundAPI)
+    let body = await res.json();
+    let source = body.previews['preview-hq-mp3'];
   } catch (error) {
     console.log(error)
   }
