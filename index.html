@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dist/main.css" />
-  <script src="./dist/main.js"></script>
+  <script src="./dist/main.js" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -26,9 +26,12 @@
   </div>
 
   <div class="visualizer-controller">
-    <h4>Default Shapes</h4>
-    <button class="shape-selector" id="rectangle-button">Rectangle</button>
-    <button class="shape-selector" id="circle-button">Circle</button>
+    <h4>Change the Visualizer</h4>
+    <select id="shape-selector">
+      <option selected disabled>Select a shape for the Visualizer</option>
+      <option value="rectangle">Bars</option>
+      <option value="circle">Circular</option>
+    </select>
     <label> Size Slider
       <select id="size-selector">
         <option selected disabled>Please Select A Size</option>
@@ -46,7 +49,7 @@
       </select>
     </label>
     <label id="rainbow">Plain or Rainbow
-      <input type="radio" name="rainbow-bool" value="true">Plain
+      <input type="radio" name="rainbow-bool" value="true" checked>Plain
       <input type="radio" name="rainbow-bool" value="false">Rainbow
     </label>
     <label> Hue Slider
@@ -66,6 +69,7 @@
       <option selected disabled>Please Select a Music Source</option>
       <option value="jamendoAPI">Jamendo</option>
       <option value="youtube-audio-library">Youtube Audio Library</option>
+      <option value="free-sounds-api">Free Sounds</option>
     </select>
     <button id="random-api-sound-generator">Generate a Random Sound</button>
     <label>Upload your own file!
