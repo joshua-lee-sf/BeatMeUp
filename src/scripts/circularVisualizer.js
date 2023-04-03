@@ -1,8 +1,18 @@
+//canvas setup
+const canvas = document.getElementById('visualizer-canvas');
+const canvasCtx = canvas.getContext('2d');
+canvas.width = window.innerHeight; //might change
+canvas.height = window.innerWidth; // might change
+
+//audio set up
+let audioSource;
+let analyzer;
+let audioElementSrc;
+
 function circularVisualize(){
     const audioContext = new AudioContext();
     const audioElement = document.getElementById('audio-element');
     audioElement.src = 123; //change this to the audio source of the element? Maybe in another function?
-    audioElement.play();
     audioSource = audioContext.createMediaElementSource(audioElement);
     analyzer = audioContext.createAnalyser();
     audioSource.connect(audioContext.destination);

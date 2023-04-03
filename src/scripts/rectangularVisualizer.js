@@ -1,3 +1,17 @@
+//canvas setup
+const canvas = document.getElementById('visualizer-canvas');
+const canvasCtx = canvas.getContext('2d');
+canvas.width = window.innerHeight; //might change
+canvas.height = window.innerWidth; // might change
+
+//audio set up
+const audioElement = document.getElementById('audio-element');
+let audioSource;
+let analyzer;
+let audioElementSrc;
+
+
+
 function rectanglularVisualizer(){
   const audioContext = new AudioContext();
   const audioElement = document.getElementById('audio-element');
@@ -37,3 +51,5 @@ function drawer(bufferLength, xPos, barWidth, barHeight, dataArray){
     xPos += barWidth;
   }
 }
+
+audioElement.addEventListener('play', rectanglularVisualizer());
