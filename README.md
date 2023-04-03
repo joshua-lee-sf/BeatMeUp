@@ -20,6 +20,7 @@ Link to my github and LinkedIn
 + [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 + [Jamendo API](https://developer.jamendo.com/v3.0)
 + [Youtube Audio Library API](https://github.com/ThibaultJanBeyer/YouTube-Free-Audio-Library-API)
++ [FreeSound API](https://freesound.org/docs/api/)
 
 ## Implementation Library
 
