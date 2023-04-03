@@ -23,11 +23,11 @@ Link to my github and LinkedIn
 
 ## Implementation Library
 
-**Friday Afternoon and Weekend**: Build HTML file and begin working code functionality. Have the music controller portion finished, and hopefully start on canvas portion of project
-**Monday**: Finish building canvas part of the visualizer and include Web Audio Frequency / frequency analyzer 
-**Tuesday**: Complete visualizer aspect and make sure it links properly with music.
-**Wednesday**: Styling and CSS
-**Thursday Morning**: Double check all functionality and make sure it works properly
+**Friday Afternoon and Weekend**: Build HTML file and begin working code functionality. Have the music controller portion finished, and hopefully start on canvas portion of project.  
+**Monday**: Finish building canvas part of the visualizer and include Web Audio Frequency / frequency analyzer.  
+**Tuesday**: Complete visualizer aspect and make sure it links properly with music.  
+**Wednesday**: Styling and CSS.  
+**Thursday Morning**: Double check all functionality and make sure it works properly.  
 
 ## Wireframe: 
 

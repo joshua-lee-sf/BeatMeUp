@@ -1,5 +1,5 @@
 import _ from './scripts/canvas';
-import __ from './scripts/audio';
+import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/audio';
 
 let audioAPISelector = document.getElementById('music-api-selector')
 let generateRandomSound = document.getElementById('random-api-sound-generator')
