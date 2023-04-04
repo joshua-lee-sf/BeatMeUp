@@ -3,9 +3,9 @@ const canvasCtx = canvas.getContext('2d');
 window.canvas.width = window.innerWidth; //might change
 window.canvas.height = window.innerHeight; // might change
 
-let hue = document.getElementById('hue-slider').value;
-let saturation = document.getElementById('saturation-slider').value;
-let lightness = document.getElementById('lightness-slider').value;
+let hue = parseInt(document.getElementById('hue-slider').value);
+let saturation = parseInt(document.getElementById('saturation-slider').value);
+let lightness = parseInt(document.getElementById('lightness-slider').value);
 let plainOrRainbow = document.getElementById('rainbow');
 
 export function rectangleDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){

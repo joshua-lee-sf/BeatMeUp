@@ -29,9 +29,11 @@ audioAPISelector.addEventListener('change', function(){
 // })
 
 audioElement.addEventListener('play', function(){
-  if (visualizerShape.value === 'rectangle') {
-    visualizer(rectangleDrawer);
-  } else {
-    visualizer(circularDrawer);
-  }
+  visualizerShape.addEventListener('change', function(){
+    if (visualizerShape.value === "rectange") {
+      visualizer(rectangleDrawer());
+    } else {
+      visualizer(circularDrawer());
+    }
+  })
 });

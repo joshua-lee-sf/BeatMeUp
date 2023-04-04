@@ -1,4 +1,5 @@
 let audioElement = document.getElementById('audio-element')
+// audioElement.crossOrigin = 'anonymous';
 
 function randomIdFinder(min,max){
   min = Math.ceil(min)
@@ -12,8 +13,9 @@ export async function fetchJamendoSound() {
   try{
     let res = await fetch(`http://localhost:5000/jamendosound?id=${jamendoID}`);
     let body = await res.json();
+    // console.log(body.results);
     if (body.results.length === 1) {
-      audioElement.src = body.results[0].audio
+      let audioSource = await fetch(`http://localhost:5000/jamendogetsound?url=${body.results[0].audio}`)
     } else {
       return await fetchJamendoSound();
     };

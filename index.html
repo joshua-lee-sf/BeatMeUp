@@ -47,9 +47,9 @@
         <option value="32768">32768</option>
       </select>
     </label>
-    <label id="rainbow">Plain or Rainbow
-      <input type="radio" name="rainbow-bool" value="true" checked>Plain
-      <input type="radio" name="rainbow-bool" value="false">Rainbow
+    <label name="rainbow-bool">Plain or Rainbow
+      <input type="radio" name="rainbow-bool" value="true" checked id="rainbow">Plain
+      <input type="radio" name="rainbow-bool" value="false" id="rainbow">Rainbow
     </label>
     <label> Hue Slider
       <input type="range" min="0" max="360" value="0" class="slider" id="hue-slider">
@@ -78,7 +78,7 @@
 
   <div class="visual">
     <canvas id="visualizer-canvas"></canvas>
-    <audio src="" id="audio-element" controls></audio>
+    <audio src="" id="audio-element" controls crossorigin="anonymous"></audio>
   </div>
 </body>
 </html>

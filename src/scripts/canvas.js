@@ -2,7 +2,11 @@ import {rectangleDrawer} from './rectangularDrawer';
 import {circularDrawer} from './circularDrawer';
 import { fetchJamendoSound, fetchFreeSound, fetchYoutubeSound } from './audio';
 
-let fftSize = document.getElementById('size-selector').value;
+let fftSize = document.getElementById('size-selector');
+
+fftSize.addEventListener('change', function(){
+  fftSize = parseInt(document.getElementById('size-selector').value)
+})
 
 
 //canvas setup
@@ -43,4 +47,4 @@ export function visualizer(drawerFunc){
   animation();
 }
 
-// event listeners
+
