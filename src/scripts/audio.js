@@ -22,7 +22,8 @@ export async function fetchJamendoSound() {
     let body = await res.json();
     // console.log(body.results);
     if (body.results.length === 1) {
-      let audioSource = await fetch(`http://localhost:5000/jamendogetsound?url=${body.results[0].audio}`)
+      // let audioSource = await fetch(`http://localhost:5000/jamendogetsound?url=${body.results[0].audio}`)
+      audioElement.src = body.results[0].audio;
     } else {
       return await fetchJamendoSound();
     };
@@ -45,6 +46,8 @@ export async function fetchYoutubeSound() {
     console.log(error)
   }
 }
+
+window.fetchYoutubeSound = fetchYoutubeSound
 
 export async function fetchFreeSound(){
   let freeSoundId = randomIdFinder(6, 682339)

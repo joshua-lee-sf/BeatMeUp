@@ -85,6 +85,7 @@ header ul {
 .logo img {
   height: 50px;
   width: auto;
+  /* background-color: white; */
 }
 
 .instructions {
