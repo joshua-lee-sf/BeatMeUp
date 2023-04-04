@@ -1,8 +1,7 @@
-import _ from './rectangularDrawer';
-import __ from './circularDrawer';
-import { fetchJamendoSound } from './audio';
+import {rectangleDrawer} from './rectangularDrawer';
+import {circularDrawer} from './circularDrawer';
+import { fetchJamendoSound, fetchFreeSound, fetchYoutubeSound } from './audio';
 
-let visualizerShape = document.getElementById('shape-selector')
 let fftSize = document.getElementById('size-selector').value;
 
 
@@ -18,9 +17,9 @@ let audioSource;
 let analyzer;
 
 //visualizer function
-function visualizer(drawerFunc){
+export function visualizer(drawerFunc){
+  console.log('drawing');
   const audioContext = new AudioContext();
-  audioElement.src = '/Users/joellee/Desktop/AppAcademyGit/Projects/BeatMeUp/assets/682338__henkonen__sax-solo-2.wav'; //change this to the audio source of the element? Maybe in another function?
   audioSource = audioContext.createMediaElementSource(audioElement);
   analyzer = audioContext.createAnalyser();
   audioSource.connect(audioContext.destination);
@@ -45,10 +44,3 @@ function visualizer(drawerFunc){
 }
 
 // event listeners
-visualizerShape.addEventListener('change', function(){
-  if (visualizerShape.value === 'rectangle') {
-    audioElement.addEventListener('play', visualizer(rectangleDrawer));
-  } else {
-    audioElement.addEventListener('play', visualizer(circularDrawer));
-  }
-})

@@ -1,4 +1,4 @@
-const youtubeAPI = 'https://thibaultjanbeyer.github.io/YouTube-Free-Audio-Library-API/api.json' ;
+let audioElement = document.getElementById('audio-element')
 
 function randomIdFinder(min,max){
   min = Math.ceil(min)
@@ -8,12 +8,12 @@ function randomIdFinder(min,max){
 
 export async function fetchJamendoSound() {
   let jamendoID = randomIdFinder(10, 250100);
-  const jamendoAPI = `https://api.jamendo.com/v3.0/tracks?client_id=096b8c72&id=${jamendoID}` ;
+  console.log('picking song');
   try{
-    let res = await fetch(jamendoAPI);
+    let res = await fetch(`http://localhost:5000/jamendosound?id=${jamendoID}`);
     let body = await res.json();
     if (body.results.length === 1) {
-      body.results[0].audio
+      audioElement.src = body.results[0].audio
     } else {
       return await fetchJamendoSound();
     };
@@ -23,28 +23,28 @@ export async function fetchJamendoSound() {
   };
 }
 
-
-async function fetchYoutubeSound() {
-  const youtubeAPI = 'https://thibaultjanbeyer.github.io/YouTube-Free-Audio-Library-API/api.json';
+export async function fetchYoutubeSound() {
+  const youtubeAPI = 'http://localhost:5000/youtubesound';
+  console.log('picking song');
   try {
     let res = await fetch(youtubeAPI);
     let body = await res.json();
     let randomId = randomIdFinder(0, 5142);
     let youtubeSoundKey = body.arr[randomId];
-    console.log(body.map[youtubeSoundKey])
+    audioElement.src = body.map[youtubeSoundKey]
   } catch (error) {
     console.log(error)
   }
 }
 
-
-async function fetchFreeSound(){
+export async function fetchFreeSound(){
   let freeSoundId = randomIdFinder(6, 682339)
-  const freeSoundAPI = `https://freesound.org/apiv2/sounds/${freeSoundId}?token=pLZSsTz8kCtXTr1kK5S7IZ6byp7rnridddAgiPqL`
+  const freeSoundAPI = `http://localhost:5000/freesound?id=${freeSoundId}`
+  console.log('picking song');
   try {
     let res = await fetch(freeSoundAPI)
     let body = await res.json();
-    let source = body.previews['preview-hq-mp3'];
+    audioElement.src = body.previews['preview-hq-mp3'];
   } catch (error) {
     console.log(error)
   }

@@ -28,15 +28,14 @@
   <div class="visualizer-controller">
     <h4>Change the Visualizer</h4>
     <select id="shape-selector">
-      <option selected disabled>Select a shape for the Visualizer</option>
-      <option value="rectangle">Bars</option>
+      <option disabled>Select a shape for the Visualizer</option>
+      <option value="rectangle" selected>Bars</option>
       <option value="circle">Circular</option>
     </select>
-    <label> Size Slider
+    <label> Size Selector
       <select id="size-selector">
-        <option selected disabled>Please Select A Size</option>
         <option value="32">32</option>
-        <option value="64">128</option>
+        <option value="64" selected>64</option>
         <option value="128">128</option>
         <option value="256">256</option>
         <option value="512">512</option>
@@ -72,8 +71,8 @@
       <option value="free-sounds-api">Free Sounds</option>
     </select>
     <button id="random-api-sound-generator">Generate a Random Sound</button>
-    <label>Upload your own file!
-      <input type="file" accept="audio/*" id="music-upload">
+    <label id="music-upload">Upload your own file!
+      <input type="file" accept="audio/*">
     </label>
   </div>
 
