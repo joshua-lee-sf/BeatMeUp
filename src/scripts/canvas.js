@@ -3,10 +3,12 @@ import {circularDrawer} from './circularDrawer';
 import { fetchJamendoSound, fetchFreeSound, fetchYoutubeSound } from './audio';
 
 
-let fftSize = document.getElementById('size-selector');
+let fftSize = document.getElementById('bar-amount');
+let fftSizeValue;
 
-fftSize.addEventListener('change', function(){
-  fftSize = parseInt(document.getElementById('size-selector').value)
+fftSize.addEventListener('input', function(){
+  fftSizeValue = parseInt(fftSize.value)
+  fftSize.value = fftSizeValue
 })
 
 //canvas setup
@@ -28,11 +30,11 @@ export function visualizer(drawerFunc){
   analyzer = audioContext.createAnalyser();
   audioSource.connect(audioContext.destination);
   audioSource.connect(analyzer);
-  analyzer.fftSize = fftSize; 
+  analyzer.fftSize = fftSizeValue; 
   const bufferLength = analyzer.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
-  const barWidth = canvas.width/bufferLength
+  const barWidth = canvas.width/(Math.floor(bufferLength - 5))
   let barHeight;
   let xPos;
   

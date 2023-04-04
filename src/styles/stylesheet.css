@@ -1,11 +1,12 @@
 body{
-  background-color: black;
+  background-color: gray;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 h1{
@@ -39,6 +40,8 @@ header ul{
   background-color: white;
   margin-top: 10px;
   margin-bottom: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 
 .visualizer-controller{
@@ -49,6 +52,8 @@ header ul{
   background-color: white;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 
 .music-options{
@@ -58,21 +63,34 @@ header ul{
   width: 20%;
   background-color: white;
   margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  z-index: 105;
 }
 
 #visualizer-canvas{
   border: 1px solid white;
   background-color: black;
+  position: relative;
   width: 75%;
   height: 75%;
-  position: absolute;
-  bottom: 100px;
-  left: 300px;
+  /* position: absolute;
+  top: 60px;
+  left: 400px; */
   border-radius: 10px;
+}
+
+.visual{
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  flex-direction: column;
 }
 
 audio {
   position: relative;
-  top: -330px;
-  left: 620px;
+  top: 10px;
+  left: 400px;
 }
+

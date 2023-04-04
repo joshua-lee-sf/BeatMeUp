@@ -3,37 +3,64 @@ const canvasCtx = canvas.getContext('2d');
 window.canvas.width = window.innerWidth; //might change
 window.canvas.height = window.innerHeight; // might change
 
+const barSize = document.getElementById('size');
+let barMultipler;
+barSize.addEventListener('input', function(){
+  barMultipler = barSize.value;
+})
 
-let hue = document.getElementById('hue-slider');
-hue.addEventListener('change', function(){
-  hue = parseInt(document.getElementById('hue-slider').value);
+const hue = document.getElementById('hue-slider');
+let hueValue;
+hue.addEventListener('input', function(){
+  hueValue = parseInt(hue.value);
+  // circularDrawer
+})
+
+const saturation = document.getElementById('saturation-slider');
+let saturationValue;
+saturation.addEventListener('input', function(){
+  saturationValue = parseInt(saturation.value);
+  // circularDrawer
 })
 
 
-let saturation = document.getElementById('saturation-slider');
-saturation.addEventListener('change', function(){
-  saturation = parseInt(document.getElementById('saturation-slider').value);
+const lightness = document.getElementById('lightness-slider');
+let lightnessValue;
+lightness.addEventListener('input', function(){
+  lightnessValue = parseInt(lightness.value);
+  // circularDrawer
 })
 
+const plainOrRainbowArray = document.getElementsByName('rainbow-bool');
+const rainbowBoolFalse = document.getElementById('rainbow-f');
+const rainbowBoolTrue = document.getElementById('rainbow-t');
+let plainOrRainbowValue;
 
-let lightness = document.getElementById('lightness-slider');
-lightness.addEventListener('change', function(){
-  lightness = parseInt(document.getElementById('lightness-slider').value);
+rainbowBoolTrue.addEventListener('input', function(e){
+  plainOrRainbowArray.forEach(option => {
+    if (option.checked) {
+      plainOrRainbowValue = option.value
+    }
+  });
 })
 
-
-let plainOrRainbow = document.getElementById('rainbow');
-
+rainbowBoolFalse.addEventListener('input', function(e){
+  plainOrRainbowArray.forEach(option => {
+    if (option.checked) {
+      plainOrRainbowValue = option.value
+    }
+  });
+})
 
 export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
   console.log('drawing');
   for (let i = 0; i < bufferLength; i++){
-    barHeight = dataArray[i]
+    barHeight = dataArray[i] * barMultipler
     canvasCtx.save()
     canvasCtx.translate(canvas.width/2, canvas.height/2);
     canvasCtx.rotate(i + Math.PI * 2/bufferLength)
-    hue = plainOrRainbow.value === 'true' ? hue : hue * 5
-    canvasCtx.fillStyle = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)';
+    let hueCode = plainOrRainbowValue === 'false' ? hueValue : hueValue * i * 5;
+    canvasCtx.fillStyle = 'hsl(' + hueCode + ', ' + saturationValue + '%, ' + lightnessValue + '%)';
     canvasCtx.fillRect(0, 0, barWidth, barHeight);
     xPos += barWidth;
     canvasCtx.restore();

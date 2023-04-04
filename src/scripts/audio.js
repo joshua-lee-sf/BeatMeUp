@@ -1,6 +1,13 @@
 let audioElement = document.getElementById('audio-element')
 // audioElement.crossOrigin = 'anonymous';
 
+const file = document.getElementById('music-upload')
+file.addEventListener('change', function(){
+  let files = this.files
+  audioElement.src = URL.createObjectURL(files[0]);
+  audioElement.load();
+})
+
 function randomIdFinder(min,max){
   min = Math.ceil(min)
   max = Math.floor(max)

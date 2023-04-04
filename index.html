@@ -22,20 +22,21 @@
 
   <div class="instructions">
     <h4>Instructions</h4>
-    <p>Hello nerds</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 
   <div class="visualizer-controller">
     <h4>Change the Visualizer</h4>
     <select id="shape-selector">
-      <option disabled>Select a shape for the Visualizer</option>
-      <option value="rectangle" selected>Bars</option>
+      <option selected disabled>Select a shape for the Visualizer</option>
+      <option value="rectangle">Bars</option>
       <option value="circle">Circular</option>
     </select>
-    <label> Size Selector
-      <select id="size-selector">
+    <label> Bar Amount
+      <select id="bar-amount">
+        <option selected disabled>Please Select the amount of bars you want</option>
         <option value="32">32</option>
-        <option value="64" selected>64</option>
+        <option value="64">64</option>
         <option value="128">128</option>
         <option value="256">256</option>
         <option value="512">512</option>
@@ -47,19 +48,29 @@
         <option value="32768">32768</option>
       </select>
     </label>
-    <label name="rainbow-bool">Plain or Rainbow
-      <input type="radio" name="rainbow-bool" value="false" checked id="rainbow">Plain
-      <input type="radio" name="rainbow-bool" value="rainbow" id="rainbow">Rainbow
+    <label>Size
+      <select id="size">
+        <option selected disabled>Please Select a Size</option>
+        <option value="1">Small</option>
+        <option value="3">Medium</option>
+        <option value="5">Large</option>
+      </select>
+    </label>
+    <label >Plain or Rainbow
+      <input type="radio" name="rainbow-bool" value="false" id="rainbow-f">Plain
+      <input type="radio" name="rainbow-bool" value="true" id="rainbow-t">Rainbow
     </label>
     <label> Hue Slider
-      <input type="range" min="0" max="360" value="0" class="slider" id="hue-slider" name="hue">
-      <output for="hue" onforminput="value = hue.valueAsNumber;"></output>
+      <input type="range" min="0" max="360" value="" class="slider" id="hue-slider" name="hue">
+      <p>Value: <span id="hue-value">180</span></p>
     </label>
     <label> Saturation Percentage
-      <input type="range" min="0" max="100" value="100" class="slider" id="saturation-slider">
+      <input type="range" min="0" max="100" value="" class="slider" id="saturation-slider">
+      <p>Value: <span id="saturation-value">50</span></p>
     </label>
     <label> Lightness Percentage
-      <input type="range" min="0" max="100" value="50" class="slider" id="lightness-slider">
+      <input type="range" min="0" max="100" value="" class="slider" id="lightness-slider">
+      <p>Value: <span id="lightness-value">50</span></p>
     </label>
   </div>
 
@@ -72,8 +83,8 @@
       <option value="free-sounds-api">Free Sounds</option>
     </select>
     <button id="random-api-sound-generator">Generate a Random Sound</button>
-    <label id="music-upload">Upload your own file!
-      <input type="file" accept="audio/*">
+    <label >Upload your own file!
+      <input type="file" accept="audio/*" id="music-upload">
     </label>
   </div>
 
