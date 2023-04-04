@@ -55,6 +55,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background-color: black;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -64,6 +68,7 @@ header {
 h1 {
   font-size: 25px;
   font-weight: 700;
+  color: white;
 }
 
 h4 {
@@ -87,23 +92,43 @@ header ul {
   display: flex;
   flex-direction: column;
   width: 20%;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .visualizer-controller {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid white;
   flex-direction: column;
   width: 20%;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .music-options {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  width: 30%;
+  border: 1px solid white;
+  width: 20%;
+  background-color: white;
+  margin-top: 20px;
 }
 
 #visualizer-canvas {
-  border: 1px solid black;
+  border: 1px solid white;
   background-color: black;
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  bottom: 100px;
+  left: 300px;
+  border-radius: 10px;
+}
+
+audio {
+  position: relative;
+  top: -330px;
+  left: 620px;
 }

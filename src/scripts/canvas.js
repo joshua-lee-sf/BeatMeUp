@@ -2,18 +2,18 @@ import {rectangleDrawer} from './rectangularDrawer';
 import {circularDrawer} from './circularDrawer';
 import { fetchJamendoSound, fetchFreeSound, fetchYoutubeSound } from './audio';
 
+
 let fftSize = document.getElementById('size-selector');
 
 fftSize.addEventListener('change', function(){
   fftSize = parseInt(document.getElementById('size-selector').value)
 })
 
-
 //canvas setup
 window.canvas = document.getElementById('visualizer-canvas');
 const canvasCtx = canvas.getContext('2d');
-window.canvas.width = window.innerWidth; //might change
-window.canvas.height = window.innerHeight; // might change
+// window.canvas.width = window.innerWidth; //might change
+// window.canvas.height = window.innerHeight; // might change
 
 //audio set up
 const audioElement = document.getElementById('audio-element');

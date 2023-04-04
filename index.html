@@ -48,11 +48,12 @@
       </select>
     </label>
     <label name="rainbow-bool">Plain or Rainbow
-      <input type="radio" name="rainbow-bool" value="true" checked id="rainbow">Plain
-      <input type="radio" name="rainbow-bool" value="false" id="rainbow">Rainbow
+      <input type="radio" name="rainbow-bool" value="false" checked id="rainbow">Plain
+      <input type="radio" name="rainbow-bool" value="rainbow" id="rainbow">Rainbow
     </label>
     <label> Hue Slider
-      <input type="range" min="0" max="360" value="0" class="slider" id="hue-slider">
+      <input type="range" min="0" max="360" value="0" class="slider" id="hue-slider" name="hue">
+      <output for="hue" onforminput="value = hue.valueAsNumber;"></output>
     </label>
     <label> Saturation Percentage
       <input type="range" min="0" max="100" value="100" class="slider" id="saturation-slider">

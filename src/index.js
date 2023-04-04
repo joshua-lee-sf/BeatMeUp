@@ -8,6 +8,12 @@ let generateRandomSound = document.getElementById('random-api-sound-generator')
 let audioElement = document.getElementById('audio-element')
 let visualizerShape = document.getElementById('shape-selector')
 
+// let fftSize = document.getElementById('size-selector');
+
+// fftSize.addEventListener('change', function(){
+//   fftSize = parseInt(document.getElementById('size-selector').value)
+// })
+
 
 //bring into index.js
 audioAPISelector.addEventListener('change', function(){
@@ -20,20 +26,24 @@ audioAPISelector.addEventListener('change', function(){
   }
 })
 
-// visualizerShape.addEventListener('change', function(){
-//   if (visualizerShape.value === 'rectangle') {
-//     audioElement.addEventListener('play', visualizer(rectangleDrawer));
-//   } else {
-//     audioElement.addEventListener('play', visualizer(circularDrawer));
-//   }
-// })
+visualizerShape.addEventListener('change', function(){
+  if (visualizerShape.value === 'rectangle') {
+    audioElement.addEventListener('play', visualizer(rectangleDrawer));
+  } else {
+    audioElement.addEventListener('play', visualizer(circularDrawer));
+  }
+})
 
-audioElement.addEventListener('play', function(){
-  visualizerShape.addEventListener('change', function(){
-    if (visualizerShape.value === "rectange") {
-      visualizer(rectangleDrawer());
-    } else {
-      visualizer(circularDrawer());
-    }
-  })
-});
+window.hueRange = document.getElementById('hue-slider')
+window.hueRange.addEventListener('change', ()=>{
+  // let bubble = hueRange.appendChild('output')
+  bubble.innerHTML = hueRange.value;
+})
+
+// audioElement.addEventListener('play', function(){
+//   if (visualizerShape.value === 'rectangle') {
+//     visualizer(rectangleDrawer)
+//   } else {
+//     visualizer(circularDrawer)
+//   }
+// });
