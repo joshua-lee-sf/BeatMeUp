@@ -10,14 +10,14 @@ barSize.addEventListener('input', function(){
 })
 
 const hue = document.getElementById('hue-slider');
-let hueValue;
+let hueValue = parseInt(hue.value);
 hue.addEventListener('input', function(){
   hueValue = parseInt(hue.value);
   // circularDrawer
 })
 
 const saturation = document.getElementById('saturation-slider');
-let saturationValue;
+let saturationValue = parseInt(saturation.value);
 saturation.addEventListener('input', function(){
   saturationValue = parseInt(saturation.value);
   // circularDrawer
@@ -25,7 +25,7 @@ saturation.addEventListener('input', function(){
 
 
 const lightness = document.getElementById('lightness-slider');
-let lightnessValue;
+let lightnessValue = parseInt(lightness.value);
 lightness.addEventListener('input', function(){
   lightnessValue = parseInt(lightness.value);
   // circularDrawer
