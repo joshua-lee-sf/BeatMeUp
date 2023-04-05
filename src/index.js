@@ -5,6 +5,7 @@ import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/au
 let audioAPISelector = document.getElementById('music-api-selector')
 let generateRandomSound = document.getElementById('random-api-sound-generator')
 let audioElement = document.getElementById('audio-element')
+audioElement.volume = 0.2;
 let visualizerShape = document.getElementById('shape-selector')
 
 
