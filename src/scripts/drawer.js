@@ -7,28 +7,32 @@ const barSize = document.getElementById('size');
 let barMultipler;
 barSize.addEventListener('input', function(){
   barMultipler = barSize.value;
+
 })
 
 const hue = document.getElementById('hue-slider');
+let hueValueDisplay = document.getElementById('hue-value')
 let hueValue = parseInt(hue.value);
 hue.addEventListener('input', function(){
   hueValue = parseInt(hue.value);
-  // circularDrawer
+  hueValueDisplay.innerHTML = hue.value
 })
 
 const saturation = document.getElementById('saturation-slider');
+const saturationValueDisplay = document.getElementById('saturation-value')
 let saturationValue = parseInt(saturation.value);
 saturation.addEventListener('input', function(){
   saturationValue = parseInt(saturation.value);
-  // circularDrawer
+  saturationValueDisplay.innerHTML = saturation.value
 })
 
 
 const lightness = document.getElementById('lightness-slider');
+const lightnessDisplayValue = document.getElementById('lightness-value')
 let lightnessValue = parseInt(lightness.value);
 lightness.addEventListener('input', function(){
   lightnessValue = parseInt(lightness.value);
-  // circularDrawer
+  lightnessDisplayValue.innerHTML = lightness.value
 })
 
 const plainOrRainbowArray = document.getElementsByName('rainbow-bool');
@@ -53,7 +57,6 @@ rainbowBoolFalse.addEventListener('input', function(e){
 })
 
 export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
-  console.log('drawing');
   for (let i = 0; i < bufferLength; i++){
     barHeight = dataArray[i] * barMultipler
     canvasCtx.save()
@@ -68,7 +71,6 @@ export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArra
 }
 
 export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
-  console.log('drawing');
   for (let i = 0; i < bufferLength; i++){
     let hueCode = plainOrRainbowValue === 'false' ? hueValue : hueValue * i;
     barHeight = dataArray[i] * barMultipler

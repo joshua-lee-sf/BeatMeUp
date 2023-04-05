@@ -1,6 +1,11 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:ital,wght@0,800;1,800);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
+/* Import Font */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,7 +61,9 @@ table {
 }
 
 body {
-  background-color: gray;
+  background-color: #AEB1B5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* max-width: 1280px; */
 }
 
 header {
@@ -67,105 +74,172 @@ header {
 }
 
 .content-container {
-  max-width: 1280px;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: 700;
-  color: white;
-  /* z-index: 105; */
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-header ul {
-  display: flex;
-  justify-content: space-around;
-}
-
-.logo img {
-  height: 50px;
-  width: auto;
-  /* background-color: white; */
-}
-
-.instructions {
-  border: 1px solid black;
-  width: 1fr;
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px 0;
-  padding: 5px;
-}
-
-.visualizer-controller {
-  display: flex;
-  border: 1px solid white;
-  flex-direction: column;
-  width: 25%;
-  background-color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px 0;
-  padding: 5px;
-}
-
-.music-options {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  width: 25%;
-  background-color: white;
-  margin-top: 20px;
-  margin-left: 20px;
-  border-radius: 5px;
-  z-index: 105;
-  padding: 5px;
-}
-
-#visualizer-canvas {
-  border: 1px solid white;
-  background-color: black;
-  position: relative;
-  width: 75%;
-  height: 75%;
-  /* position: absolute;
-  top: 60px;
-  left: 400px; */
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px 0;
+  max-width: 100%;
+  display: inline-flex;
+  /* justify-content: space-between; */
+  /* flex-direction: row; */
+  /* margin: 1000px; */
 }
 
 .visual {
   display: flex;
   position: absolute;
-  top: 70px;
-  left: 500px;
   flex-direction: column;
+  width: 3fr;
+  /* left: 500px; */
+}
+
+.customizer-container {
+  display: flex;
+  flex-direction: column;
+  width: 1fr;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: BioRhyme Expanded;
+  font-weight: 700;
+  color: #FEDD0D;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-size: 1.4em;
+  font-weight: 550;
+  text-transform: uppercase;
+  color: #D8D8D8;
+  padding: 2px;
+  letter-spacing: 1px;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+}
+
+header ul li {
+  margin: 5px;
+  /* padding: 20px */
+}
+
+.slider-container {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: white;
+  /* border-radius: 10px; */
+  opacity: 0.7;
+  margin: 2px;
+  /* border: -5px solid transparent; */
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.75em;
+  height: 1.7em;
+  background: #302D2D;
+  cursor: pointer;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  opacity: 200;
+}
+
+header ul a {
+  text-decoration: none;
+}
+
+#color-selector {
+  display: flex;
+}
+
+.logo img {
+  height: 50px;
+  width: 60px;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #848484;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  padding: 9px;
+  z-index: 105;
+  opacity: 0.8;
+}
+
+.instructions:hover, .visualizer-controller:hover, .music-options:hover {
+  opacity: 1;
+}
+
+.visualizer-controller {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #848484;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+  padding: 9px;
+  z-index: 105;
+  opacity: 0.8;
+}
+
+.music-options {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #848484;
+  margin-top: 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+  z-index: 105;
+  padding: 9px;
+  opacity: 0.8;
+}
+
+#visualizer-canvas {
+  border: 1px solid #848484;
+  background-color: black;
+  position: relative;
+  width: 75%;
+  height: 75%;
+  /* position: absolute; */
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 4px 0; */
+}
+
+#color-selector {
+  display: flex;
+  flex-direction: row;
 }
 
 audio {
-  position: relative;
-  top: 10px;
-  left: 400px;
+  /* position: absolute; */
+  margin: 5px auto;
+  /* right: 300px; */
 }
 
 select:hover, a:hover, input:hover, button:hover {
   cursor: pointer;
 }
 
-#music-uploader {
+/* #music-uploader{
   background-color: orange;
-}
+} */

@@ -43,6 +43,12 @@ export function visualizer(drawerFunc){
     requestAnimationFrame(animation);
   }
 
+  let animate = requestAnimationFrame(animation);
+
+  if (animate) {
+    cancelAnimationFrame(animate);
+  }
+
   if(audioContext.state === 'suspended'){
     audioContext.resume();
   }
@@ -54,6 +60,7 @@ export function visualizer(drawerFunc){
     animation();
     disconnected = false;
   }
+  
   animation();
   
   };
