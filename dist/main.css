@@ -66,6 +66,10 @@ header {
   margin-bottom: 20px;
 }
 
+.content-container {
+  max-width: 1280px;
+}
+
 h1 {
   font-size: 42px;
   font-weight: 700;

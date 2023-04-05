@@ -19,82 +19,83 @@
     </nav>
   </header>
   
-
-  <div class="instructions">
-    <h4>Instructions</h4>
-    <p>Hello! Welcome to my JavaScript Project! This is a sound visualizer and will analyze sound data like frequency and volume and then display it for you in the canvas. You can either
+  <div class="content-container">
+    <div class="instructions">
+      <h4>Instructions</h4>
+      <p>Hello! Welcome to my JavaScript Project! This is a sound visualizer and will analyze sound data like frequency and volume and then display it for you in the canvas. You can either
       upoad your own music or use an the random sound generator button below to get a random sound from one of the few sound sources provided. Then select the shape of your visualizer, the amount of bars you want in the visualizer,
       then the size of the visualizer. You can then select whether you want the coloring to be a single color or a rainbow. You can adjust the Hue, Saturation, or the Lightness using the sliders provided below. After all of these settings have been filled in,
       press the play button in the media control area and watch the visualizer dance!
-    </p>
-  </div>
+      </p>
+    </div>
 
-  <div class="visualizer-controller">
-    <h4>Change the Visualizer</h4>
-    <select id="shape-selector">
-      <option selected disabled>Select a shape for the Visualizer</option>
-      <option value="rectangle">Bars</option>
-      <option value="circle">Circular</option>
-    </select>
-    <label> Bar Amount
-      <select id="bar-amount">
-        <option selected disabled>Select the amount of bars</option>
-        <option value="32">32</option>
-        <option value="64">64</option>
-        <option value="128">128</option>
-        <option value="256">256</option>
-        <option value="512">512</option>
-        <option value="1024">1024</option>
-        <option value="2048">2048</option>
-        <option value="4096">4096</option>
-        <option value="8192">8192</option>
-        <option value="16384">16384</option>
-        <option value="32768">32768</option>
+    <div class="visualizer-controller">
+      <h4>Change the Visualizer</h4>
+      <select id="shape-selector">
+        <option selected disabled>Select a shape for the Visualizer</option>
+        <option value="rectangle" >Bars</option>
+        <option value="circle">Circular</option>
       </select>
-    </label>
-    <label>Size
-      <select id="size">
-        <option selected disabled>Please Select a Size</option>
-        <option value="1">Small</option>
-        <option value="3">Medium</option>
-        <option value="5">Large</option>
+      <label> Bar Amount
+        <select id="bar-amount">
+          <option selected disabled>Select the amount of bars</option>
+          <option value="32">32</option>
+          <option value="64">64</option>
+          <option value="128">128</option>
+          <option value="256">256</option>
+          <option value="512">512</option>
+          <option value="1024">1024</option>
+          <option value="2048">2048</option>
+          <option value="4096">4096</option>
+          <option value="8192">8192</option>
+          <option value="16384">16384</option>
+          <option value="32768">32768</option>
+        </select>
+      </label>
+      <label>Size
+        <select id="size">
+          <option selected disabled>Please Select a Size</option>
+          <option value="1">Small</option>
+          <option value="3">Medium</option>
+          <option value="5">Large</option>
+        </select>
+      </label>
+      <label >Plain or Rainbow
+        <input type="radio" name="rainbow-bool" value="false" id="rainbow-f">Plain
+        <input type="radio" name="rainbow-bool" value="true" id="rainbow-t">Rainbow
+      </label>
+      <label> Hue Slider
+        <input type="range" min="0" max="360" value="" class="slider" id="hue-slider" name="hue">
+        <p>Value: <span id="hue-value">180</span></p>
+      </label>
+      <label> Saturation Percentage
+        <input type="range" min="0" max="100" value="" class="slider" id="saturation-slider">
+        <p>Value: <span id="saturation-value">50</span></p>
+      </label>
+      <label> Lightness Percentage
+        <input type="range" min="0" max="100" value="" class="slider" id="lightness-slider">
+        <p>Value: <span id="lightness-value">50</span></p>
+      </label>
+    </div>
+
+    <div class="music-options">
+      <h4>Music Options</h4>
+      <select id="music-api-selector">
+        <option selected disabled>Please Select a Music Source</option>
+        <option value="jamendoAPI">Jamendo</option>
+        <option value="youtube-audio-library">Youtube Audio Library</option>
+        <option value="free-sounds-api">Free Sounds</option>
       </select>
-    </label>
-    <label >Plain or Rainbow
-      <input type="radio" name="rainbow-bool" value="false" id="rainbow-f">Plain
-      <input type="radio" name="rainbow-bool" value="true" id="rainbow-t">Rainbow
-    </label>
-    <label> Hue Slider
-      <input type="range" min="0" max="360" value="" class="slider" id="hue-slider" name="hue">
-      <p>Value: <span id="hue-value">180</span></p>
-    </label>
-    <label> Saturation Percentage
-      <input type="range" min="0" max="100" value="" class="slider" id="saturation-slider">
-      <p>Value: <span id="saturation-value">50</span></p>
-    </label>
-    <label> Lightness Percentage
-      <input type="range" min="0" max="100" value="" class="slider" id="lightness-slider">
-      <p>Value: <span id="lightness-value">50</span></p>
-    </label>
-  </div>
+      <button id="random-api-sound-generator">Generate a Random Sound</button>
+      <label >Upload your own file!
+        <input type="file" accept="audio/*" id="music-upload">
+      </label>
+    </div>
 
-  <div class="music-options">
-    <h4>Music Options</h4>
-    <select id="music-api-selector">
-      <option selected disabled>Please Select a Music Source</option>
-      <option value="jamendoAPI">Jamendo</option>
-      <option value="youtube-audio-library">Youtube Audio Library</option>
-      <option value="free-sounds-api">Free Sounds</option>
-    </select>
-    <button id="random-api-sound-generator">Generate a Random Sound</button>
-    <label >Upload your own file!
-      <input type="file" accept="audio/*" id="music-upload">
-    </label>
-  </div>
-
-  <div class="visual">
-    <canvas id="visualizer-canvas"></canvas>
-    <audio src="" id="audio-element" controls crossorigin="anonymous"></audio>
+    <div class="visual">
+      <canvas id="visualizer-canvas"></canvas>
+      <audio src="" id="audio-element" controls crossorigin="anonymous"></audio>
+    </div>
   </div>
 </body>
 </html>
