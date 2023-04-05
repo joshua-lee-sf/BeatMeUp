@@ -161,3 +161,11 @@ audio {
   top: 10px;
   left: 400px;
 }
+
+select:hover, a:hover, input:hover, button:hover {
+  cursor: pointer;
+}
+
+#music-uploader {
+  background-color: orange;
+}

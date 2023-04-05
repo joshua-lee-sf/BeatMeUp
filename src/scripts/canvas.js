@@ -1,5 +1,4 @@
-import {rectangularDrawer} from './rectangularDrawer';
-import {circularDrawer} from './circularDrawer';
+import {circularDrawer, rectangularDrawer} from './drawer';
 import { fetchJamendoSound, fetchFreeSound, fetchYoutubeSound } from './audio';
 
 
@@ -83,7 +82,7 @@ function reVisualizer(drawerFunc = visualizerShapeSelector.value === 'rectangle'
 function updateVisualizer() {
   if (analyzer && fftSizeValue) {
     analyzer.fftSize = fftSizeValue;
-    visualizer(rectangularDrawer);
+    drawSelector();
   }
 }
 

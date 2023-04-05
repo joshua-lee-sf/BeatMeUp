@@ -1,4 +1,4 @@
-import { circularDrawer } from "./circularDrawer";
+import { circularDrawer } from "./drawer";
 import { rectangularDrawer } from "./rectangularDrawer";
 
 function reVisualizer(drawerFunc = visualizerShapeSelector.value === 'rectangle' ? rectangularDrawer : circularDrawer){

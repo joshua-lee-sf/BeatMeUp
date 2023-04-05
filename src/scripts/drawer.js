@@ -9,35 +9,26 @@ barSize.addEventListener('input', function(){
   barMultipler = barSize.value;
 })
 
-const hueSliderValue = document.getElementById('hue-value');
 const hue = document.getElementById('hue-slider');
 let hueValue;
 hue.addEventListener('input', function(){
   hueValue = parseInt(hue.value);
-  hueSliderValue.innerHTML = hueValue
-  // rectangleDrawer
-  // console.log('changing hue')
+  // circularDrawer
 })
 
-const saturationSliderValue = document.getElementById('saturation-value')
 const saturation = document.getElementById('saturation-slider');
-let saturationValue
+let saturationValue;
 saturation.addEventListener('input', function(){
   saturationValue = parseInt(saturation.value);
-  saturationSliderValue.innerHTML = saturationValue
-  // rectangleDrawer
-  // console.log('changing saturation')
-
+  // circularDrawer
 })
 
-const lightnessSliderValue = document.getElementById('lightness-value')
+
 const lightness = document.getElementById('lightness-slider');
 let lightnessValue;
 lightness.addEventListener('input', function(){
   lightnessValue = parseInt(lightness.value);
-  lightnessSliderValue.innerHTML = lightnessValue;
-  // rectangleDrawer
-  // console.log('changing lightness')
+  // circularDrawer
 })
 
 const plainOrRainbowArray = document.getElementsByName('rainbow-bool');
@@ -61,6 +52,21 @@ rainbowBoolFalse.addEventListener('input', function(e){
   });
 })
 
+export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
+  console.log('drawing');
+  for (let i = 0; i < bufferLength; i++){
+    barHeight = dataArray[i] * barMultipler
+    canvasCtx.save()
+    canvasCtx.translate(canvas.width/2, canvas.height/2);
+    canvasCtx.rotate(i + Math.PI * 2/bufferLength)
+    let hueCode = plainOrRainbowValue === 'false' ? hueValue : hueValue * i * 5;
+    canvasCtx.fillStyle = 'hsl(' + hueCode + ', ' + saturationValue + '%, ' + lightnessValue + '%)';
+    canvasCtx.fillRect(0, 0, barWidth, barHeight);
+    xPos += barWidth;
+    canvasCtx.restore();
+  }
+}
+
 export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
   console.log('drawing');
   for (let i = 0; i < bufferLength; i++){
@@ -71,4 +77,3 @@ export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataA
     xPos += barWidth;
   }
 }
-

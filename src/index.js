@@ -1,6 +1,5 @@
 import {visualizer, drawSelector} from './scripts/canvas';
-import {circularDrawer} from './scripts/circularDrawer';
-import {rectangularDrawer} from './scripts/rectangularDrawer'
+import {circularDrawer, rectangularDrawer} from './scripts/drawer';
 import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/audio';
 
 let audioAPISelector = document.getElementById('music-api-selector')
