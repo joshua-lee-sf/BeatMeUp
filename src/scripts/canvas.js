@@ -15,81 +15,56 @@ const canvasCtx = canvas.getContext('2d');
 
 //audio set up
 const audioElement = document.getElementById('audio-element');
-let analyzer;
+const audioContext = new AudioContext();
+let analyzer = audioContext.createAnalyser();;
 let audioSource;
 
+analyzer.fftSize = fftSizeValue;
+let bufferLength = analyzer.frequencyBinCount;
+let dataArray = new Uint8Array(bufferLength);
+let barWidth = canvas.width/(Math.floor(bufferLength - 5))
+let barHeight;
+let xPos;
+
+let disconnected = true;
 
 // visualizer event listener for change
 let visualizerShapeSelector = document.getElementById('shape-selector')
 
+visualizerShapeSelector.addEventListener('change', drawSelector);
 
 //visualizer function
 export function visualizer(drawerFunc){
-  const audioContext = new AudioContext();
-  audioSource = audioContext.createMediaElementSource(audioElement);
-  audioSource.connect(audioContext.destination);
-  analyzer = audioContext.createAnalyser();
-  audioSource.connect(analyzer);
-  analyzer.fftSize = fftSizeValue;
-  const bufferLength = analyzer.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-  const barWidth = canvas.width/(Math.floor(bufferLength - 5))
-  let barHeight;
-  let xPos;
-  
   function animation(){
-      xPos = 0;
-      canvasCtx.clearRect(0,0,canvas.width, canvas.height)
-      analyzer.getByteFrequencyData(dataArray);
-      drawerFunc(bufferLength, xPos, barWidth, barHeight, dataArray);
-      requestAnimationFrame(animation);
+    xPos = 0;
+    canvasCtx.clearRect(0,0,canvas.width, canvas.height)
+    analyzer.getByteFrequencyData(dataArray);
+    drawerFunc(bufferLength, xPos, barWidth, barHeight, dataArray);
+    requestAnimationFrame(animation);
   }
 
+  if(audioContext.state === 'suspended'){
+    audioContext.resume();
+  }
+  
+  if(disconnected) {
+    audioSource = audioContext.createMediaElementSource(audioElement);
+    audioSource.connect(analyzer);
+    analyzer.connect(audioContext.destination)
+    animation();
+    disconnected = false;
+  }
   animation();
   
-  visualizerShapeSelector.addEventListener('change', function(){
-    reVisualizer();
-  });
-}  
+  };
 
-function reVisualizer(drawerFunc = visualizerShapeSelector.value === 'rectangle' ? rectangularDrawer : circularDrawer){
-  if(audioSource !== null) {
-    audioSource.disconnect();
-  }
-  audioSource.connect(audioContext.destination)
-  analyzer = audioContext.createAnalyser();
-  audioSource.connect(analyzer);
-  analyzer.fftSize = fftSizeValue;
-  const bufferLength = analyzer.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-  const barWidth = canvas.width/(Math.floor(bufferLength - 5))
-  let barHeight;
-  let xPos;
-  
-  function animation(){
-      xPos = 0;
-      canvasCtx.clearRect(0,0,canvas.width, canvas.height)
-      analyzer.getByteFrequencyData(dataArray);
-      drawerFunc(bufferLength, xPos, barWidth, barHeight, dataArray);
-      requestAnimationFrame(animation);
-  }
-
-  animation();
-}
-
-function updateVisualizer() {
-  if (analyzer && fftSizeValue) {
-    analyzer.fftSize = fftSizeValue;
-    drawSelector();
-  }
-}
 
 // add an event listener to the input element to update the visualizer whenever the input changes
-fftSizeInput.addEventListener('input', function(){
-  console.log('changing fft');
-  updateVisualizer();
+fftSizeInput.addEventListener('change', function(){
+  analyzer.fftSize = fftSizeValue;
+  bufferLength = analyzer.frequencyBinCount;
+  dataArray = new Uint8Array(bufferLength);
+  barWidth = canvas.width/(Math.floor(bufferLength - 5))
 });
 
 
