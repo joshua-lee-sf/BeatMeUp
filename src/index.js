@@ -1,4 +1,4 @@
-import {visualizer} from './scripts/canvas';
+import {visualizer, drawSelector} from './scripts/canvas';
 import {circularDrawer} from './scripts/circularDrawer';
 import {rectangularDrawer} from './scripts/rectangularDrawer'
 import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/audio';
@@ -22,6 +22,7 @@ audioAPISelector.addEventListener('input', function(){
   }
 })
 
+
 // visualizerShape.addEventListener('input', function(){
 //   if (visualizerShape.value === 'rectangle') {
 //     audioElement.addEventListener('play', visualizer(rectangularDrawer));
@@ -31,11 +32,4 @@ audioAPISelector.addEventListener('input', function(){
 // })
 
 
-
-audioElement.addEventListener('play', function(){
-  if (visualizerShape.value === 'rectangle') {
-    visualizer(rectangularDrawer)
-  } else {
-    visualizer(circularDrawer)
-  }
-});
+audioElement.addEventListener('play', drawSelector);
