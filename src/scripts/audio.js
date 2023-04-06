@@ -17,7 +17,7 @@ function randomIdFinder(min,max){
 export async function fetchJamendoSound() {
   let jamendoID = randomIdFinder(10, 250100);
   try{
-    let res = await fetch(`http://localhost:5000/jamendosound?id=${jamendoID}`);
+    let res = await fetch(`https://beatmeupproxy.onrender.com/jamendosound?id=${jamendoID}`);
     let body = await res.json();
     if (body.results.length === 1) {
       audioElement.src = body.results[0].audio;
@@ -31,14 +31,14 @@ export async function fetchJamendoSound() {
 }
 
 export async function fetchYoutubeSound() {
-  const youtubeAPI = 'http:localhost:5000/youtubesound';  
+  const youtubeAPI = 'https://beatmeupproxy.onrender.com/youtubesound';  
   try {
     let res = await fetch(youtubeAPI);
     let body = await res.json();
     let randomId = randomIdFinder(0, 5142);
     let youtubeSoundKey = body.arr[randomId];
     console.log(body.map[youtubeSoundKey])
-    let res2 = await fetch(`http://localhost:5000/youtubesounds?url=${encodeURIComponent(body.map[youtubeSoundKey])}`);
+    let res2 = await fetch(`https://beatmeupproxy.onrender.com/youtubesounds?url=${encodeURIComponent(body.map[youtubeSoundKey])}`);
     let body2 = await res2.blob()
     console.log(URL.createObjectURL(body2))
     audioElement.src = URL.createObjectURL(body2)
@@ -49,7 +49,7 @@ export async function fetchYoutubeSound() {
 
 export async function fetchFreeSound(){
   let freeSoundId = randomIdFinder(6, 682339)
-  const freeSoundAPI = `http://localhost:5000/freesound?id=${freeSoundId}`
+  const freeSoundAPI = `https://beatmeupproxy.onrender.com/freesound?id=${freeSoundId}`
   try {
     let res = await fetch(freeSoundAPI)
     let body = await res.json();
