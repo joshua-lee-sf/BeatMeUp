@@ -146,14 +146,18 @@ header ul a{
 	height: 1px;
 	width: 1px;
 	/* border: 0; */
-	overflow: hidden;
+	/* overflow: hidden; */
 }
+
+input[type='radio']:checked+label{
+  background-color: #00D5D5;
+}
+
 
 .color-selector label{
   background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
+	color: #424444;
 	font-size: 14px;
-	line-height: 1;
   letter-spacing: 1px;
 	text-align: center;
 	padding: 8px 10px;
@@ -169,9 +173,6 @@ header ul a{
   background-color: white;
 }
 
-.color-selector label>input:checked{
-  background: red;
-}
 
 .logo img{
   height: 40px;
