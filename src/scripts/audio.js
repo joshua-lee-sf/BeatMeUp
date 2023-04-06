@@ -60,9 +60,23 @@ export async function fetchFreeSound(){
 }
 
 
-//audio controls feature to be added later
+// audio controls feature to be added later
 // const playButton = document.getElementById('playbutton')
 
 // playButton.addEventListener('click', function(){
-//   audioElement.play();
+  
+//   if (AudioContext.state === 'suspended') {
+//     AudioContext.resume();
+//   }
+
+//   if (playButton.dataset.playing === 'false') {
+//     audioElement.play()
+//     playButton.dataset.playing = 'true'
+//     let playImage = document.createElement('img')
+//     playButton.appendChild(playImage)
+//   } else if (playButton.dataset.playing === 'true') {
+//     audioElement.pause();
+//     playButton.dataset.playing = 'false'
+//   }
+//   false;
 // })
