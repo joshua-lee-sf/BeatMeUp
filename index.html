@@ -27,11 +27,11 @@
       <h4>Instructions</h4>
       <ul id="instructions list">
         <li>Welcome to my JavaScript Project!</li>
-        <li>This is a sound visualizer that uses Web Audio API, Canvas API, Jamendo API, and FreeSounds API</li>
+        <li>This is a sound visualizer that uses Web Audio API, Canvas API, Jamendo API, FreeSounds API, Google Audio Library API</li>
         <li>Use the Customize Visualizer Menu to customize the visualizer to your liking</li>
         <li>Use the Music Options Menu to select the media output</li>
         <li>Press play and watch the magic happen!</li>
-        <li>You can also customize the visualizer as music is playing</li>
+        <li>You can customize the visualizer as music is playing!</li>
       </ul>
     </div>
 
@@ -67,8 +67,8 @@
           <option value="5">Large</option>
         </select>
       </label>
-      <h5>Plain or Rainbow</h5>
-      <div id="color-selector">
+      <label>Plain or Rainbow</label>
+      <div class="color-selector">
         <label>Plain
           <input type="radio" name="rainbow-bool" value="false" id="rainbow-f">
         </label>
@@ -101,15 +101,14 @@
         <option value="youtube-audio-library">Youtube Audio Library</option>
       </select>
       <button id="random-api-sound-generator">Generate a Random Sound</button>
-      <label >Upload your own file!
-        <input type="file" accept="audio/*" id="music-upload">
-      </label>
+      <label>
+        <input type="file" accept="audio/*" id="music-upload" value="Upload A Song">
     </div>
     </div>
 
     <div class="visual">
       <canvas id="visualizer-canvas"></canvas>
-      <audio src="" id="audio-element" crossorigin="anonymous" controls></audio>
+      <audio src="" id="audio-element" crossorigin="anonymous" controls type="audio/mp3"></audio>
       <!-- <div class="audio-controls">
         <button id="playbutton" data-playing="false" role="switch" aria-checked="false">
           <span>Play/Pause</span>

@@ -1,7 +1,7 @@
-window.canvas = document.getElementById('visualizer-canvas');
+const canvas = document.getElementById('visualizer-canvas');
 const canvasCtx = canvas.getContext('2d');
-window.canvas.width = window.innerWidth; //might change
-window.canvas.height = window.innerHeight; // might change
+canvas.width = canvas.clientWidth; //might change
+canvas.height = canvas.clientHeight; // might change
 
 const barSize = document.getElementById('size');
 let barMultipler;
