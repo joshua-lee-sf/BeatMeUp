@@ -22,6 +22,7 @@ I have instructions on the app itself. But here's a quick rundown:
 
 ## Technical Implementations
 
+My app can be broken into 3 main important functions, creating and drawing the visualizer, obtaining music, and the user customization aspect. The snippets below show how each part of the code was implemented.
 
 ## Animating the bars: 
 I run this code under an event listener to listen for an `audioElement` to play. If the  `audioElement` is playing, then this code runs. It also takes in consideration the `shape` that was selected ine step 1 in the instructions and runs the specific `drawerFunc` function for the shape.
@@ -90,7 +91,7 @@ export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataA
 ```
 
 ## Sound/Song Selector/Uploader Functions:
-Code for running the song selectors:
+Code for running the song selectors. After user selects the song source, the generate random song button hits my `express` back end server to finish the fetch and add the audio link to the audio element source.
 ```js
 audioAPISelector.addEventListener('input', function(){
   if (audioAPISelector.value === 'jamendoAPI') { 
@@ -113,6 +114,23 @@ file.addEventListener('change', function(){
 })
 ```
 
+## User interaction
+
+User interaction was a bunch of event listeners listening for user input and updating the drawer functions with those new values. This is an example of the hue slider bar.
+```js
+const hue = document.getElementById('hue-slider');
+let hueValueDisplay = document.getElementById('hue-value')
+let hueValue = parseInt(hue.value);
+hue.addEventListener('input', function(){
+  hueValue = parseInt(hue.value);
+  hueValueDisplay.innerHTML = hue.value
+})
+```
+
 # Future Features
 
-Web Audio is such a vast open source API that has a near infinite amount of possible implementations. I'd love to add spatial audio in the future, add more shapes in to the drawer menu, and add even more user customization.
+Web Audio is such a vast open source API that has a near infinite amount of possible implementations. I'd love to add spatial audio in the future, add more shapes in to the drawer menu, and add even more user customization. As of right now, the code is using the default media player buttons but I would love to add my own custom audio controls in the future. I would like to add a dynamic play/pause button, a volume knob/slider, and the fast forward buttons(if possible).
+
+# Thanks
+
+Thanks for looking at my project! I learned a lot throughout this process and will be implementing those changes in my future projects! If you have any questions please don't hesitate to reach out to me at my [email](mailto:joshua.lee0195@gmail.com)!
