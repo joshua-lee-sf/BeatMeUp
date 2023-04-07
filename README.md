@@ -131,6 +131,6 @@ hue.addEventListener('input', function(){
 
 Web Audio is such a vast open source API that has a near infinite amount of possible implementations. I'd love to add spatial audio in the future, add more shapes in to the drawer menu, and add even more user customization. As of right now, the code is using the default media player buttons but I would love to add my own custom audio controls in the future. I would like to add a dynamic play/pause button, a volume knob/slider, and the fast forward buttons(if possible).
 
-# Thanks
+# Thank You
 
-Thanks for looking at my project! I learned a lot throughout this process and will be implementing those changes in my future projects! If you have any questions please don't hesitate to reach out to me at my [email](mailto:joshua.lee0195@gmail.com)!
+Thanks for looking at my project! I learned a lot throughout this process and will be implementing those changes in my future projects! Thank you to my fellow classmates that helped me throughout this project as well! Without them helping and supporting me, I would not have anything to show to you all! If you have any questions please don't hesitate to reach out to me at my [email](mailto:joshua.lee0195@gmail.com)!
