@@ -91,7 +91,7 @@ export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataA
 ```
 
 ## Sound/Song Selector/Uploader Functions:
-Code for running the song selectors. After user selects the song source, the generate random song button hits my `express` back end server to finish the fetch and add the audio link to the audio element source.
+Code for running the song selectors. After user selects the song source, the generate random song button hits my `express` backend server to finish the fetch and add the audio link to the audio element source.
 ```js
 audioAPISelector.addEventListener('input', function(){
   if (audioAPISelector.value === 'jamendoAPI') { 
