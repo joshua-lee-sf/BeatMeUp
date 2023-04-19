@@ -2,6 +2,12 @@
 
 Welcome to my app! It's a sound visualizer that analyzes frequencies and other data from sound files. Please check it out [here](https://joshua-lee-sf.github.io/BeatMeUp/)! 😁 (the name is a play on words like Beam Me Up Scotty! But Since it visualizes beats I used Beat Me Up)
 
+# Table of Contents
+1. [Technologies]()
+2. [Instructions]()
+3. [Technical Implmentations]()
+  ** [Animating the Bars]()
+
 # Technologies
 
 Technologies used: `HTML5`, `CSS`, `JavaScript`, `Web Audio API`, `Express`, `Canvas API`, `Free Sounds API`, `Jamendo API`, `Google Audio Library API`
