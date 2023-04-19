@@ -4,7 +4,7 @@ Welcome to my app! It's a sound visualizer that analyzes frequencies and other d
 
 # Technologies
 
-Technologies used: `HTML5`, `CCS`, `JavaScript`, `Web Audio API`, `Express`, `Canvas API`, `Free Sounds API`, `Jamendo API`, `Google Audio Library API`
+Technologies used: `HTML5`, `CSS`, `JavaScript`, `Web Audio API`, `Express`, `Canvas API`, `Free Sounds API`, `Jamendo API`, `Google Audio Library API`
 
 ## Instructions
 
