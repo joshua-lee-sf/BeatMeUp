@@ -2,9 +2,15 @@
 
 Welcome to my app! It's a sound visualizer that analyzes frequencies and other data from sound files. Please check it out [here](https://joshua-lee-sf.github.io/BeatMeUp/)! 😁 (the name is a play on words like Beam Me Up Scotty! But Since it visualizes beats I used Beat Me Up)
 
+# Table of Contents
+1. [Technologies]()
+2. [Instructions]()
+3. [Technical Implmentations]()
+  ** [Animating the Bars]()
+
 # Technologies
 
-Technologies used: `HTML5`, `CCS`, `JavaScript`, `Web Audio API`, `Express`, `Canvas API`, `Free Sounds API`, `Jamendo API`, `Google Audio Library API`
+Technologies used: `HTML5`, `CSS`, `JavaScript`, `Web Audio API`, `Express`, `Canvas API`, `Free Sounds API`, `Jamendo API`, `Google Audio Library API`
 
 ## Instructions
 
@@ -91,7 +97,7 @@ export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataA
 ```
 
 ## Sound/Song Selector/Uploader Functions:
-Code for running the song selectors. After user selects the song source, the generate random song button hits my `express` back end server to finish the fetch and add the audio link to the audio element source.
+Code for running the song selectors. After user selects the song source, the generate random song button hits my `express` backend server to finish the fetch and add the audio link to the audio element source.
 ```js
 audioAPISelector.addEventListener('input', function(){
   if (audioAPISelector.value === 'jamendoAPI') { 
