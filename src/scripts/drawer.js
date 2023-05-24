@@ -15,7 +15,7 @@ let hueValueDisplay = document.getElementById('hue-value')
 let hueValue = parseInt(hue.value);
 hue.addEventListener('input', function(){
   hueValue = parseInt(hue.value);
-  hueValueDisplay.innerHTML = hue.value
+  hueValueDisplay.innerHTML = hue.value;
 })
 
 const saturation = document.getElementById('saturation-slider');
@@ -23,7 +23,7 @@ const saturationValueDisplay = document.getElementById('saturation-value')
 let saturationValue = parseInt(saturation.value);
 saturation.addEventListener('input', function(){
   saturationValue = parseInt(saturation.value);
-  saturationValueDisplay.innerHTML = saturation.value
+  saturationValueDisplay.innerHTML = saturation.value;
 })
 
 
@@ -32,7 +32,7 @@ const lightnessDisplayValue = document.getElementById('lightness-value')
 let lightnessValue = parseInt(lightness.value);
 lightness.addEventListener('input', function(){
   lightnessValue = parseInt(lightness.value);
-  lightnessDisplayValue.innerHTML = lightness.value
+  lightnessDisplayValue.innerHTML = lightness.value;
 })
 
 const plainOrRainbowArray = document.getElementsByName('rainbow-bool');
@@ -43,7 +43,7 @@ let plainOrRainbowValue;
 rainbowBoolTrue.addEventListener('input', function(e){
   plainOrRainbowArray.forEach(option => {
     if (option.checked) {
-      plainOrRainbowValue = option.value
+      plainOrRainbowValue = option.value;
     }
   });
 })
@@ -51,17 +51,17 @@ rainbowBoolTrue.addEventListener('input', function(e){
 rainbowBoolFalse.addEventListener('input', function(e){
   plainOrRainbowArray.forEach(option => {
     if (option.checked) {
-      plainOrRainbowValue = option.value
+      plainOrRainbowValue = option.value;
     }
   });
 })
 
 export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
   for (let i = 0; i < bufferLength; i++){
-    barHeight = dataArray[i] * barMultipler
-    canvasCtx.save()
+    barHeight = dataArray[i] * barMultipler;
+    canvasCtx.save();
     canvasCtx.translate(canvas.width/2, canvas.height/2);
-    canvasCtx.rotate(i + Math.PI * 2/bufferLength)
+    canvasCtx.rotate(i + Math.PI * 2/bufferLength);
     let hueCode = plainOrRainbowValue === 'false' ? hueValue : hueValue * i * 5;
     canvasCtx.fillStyle = 'hsl(' + hueCode + ', ' + saturationValue + '%, ' + lightnessValue + '%)';
     canvasCtx.fillRect(0, 0, barWidth, barHeight);
@@ -73,7 +73,7 @@ export function circularDrawer(bufferLength, xPos, barWidth, barHeight, dataArra
 export function rectangularDrawer(bufferLength, xPos, barWidth, barHeight, dataArray){
   for (let i = 0; i < bufferLength; i++){
     let hueCode = plainOrRainbowValue === 'false' ? hueValue : hueValue * i;
-    barHeight = dataArray[i] * barMultipler
+    barHeight = dataArray[i] * barMultipler;
     canvasCtx.fillStyle = 'hsl(' + hueCode + ', ' + saturationValue + '%, ' + lightnessValue + '%)';
     canvasCtx.fillRect(xPos, canvas.height - barHeight, barWidth, barHeight);
     xPos += barWidth;

@@ -3,14 +3,14 @@ let audioElement = document.getElementById('audio-element')
 
 const file = document.getElementById('music-upload')
 file.addEventListener('change', function(){
-  let files = this.files
+  let files = this.files;
   audioElement.src = URL.createObjectURL(files[0]);
   audioElement.load();
 })
 
 function randomIdFinder(min,max){
-  min = Math.ceil(min)
-  max = Math.floor(max)
+  min = Math.ceil(min);
+  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
 };
 
@@ -26,7 +26,7 @@ export async function fetchJamendoSound() {
     };
     }
     catch (err) {
-    console.log(err)
+    console.log(err);
   };
 }
 
@@ -38,10 +38,10 @@ export async function fetchYoutubeSound() {
     let randomId = randomIdFinder(0, 5142);
     let youtubeSoundKey = body.arr[randomId];
     let res2 = await fetch(`https://beatmeupproxy.onrender.com/youtubesounds?url=${encodeURIComponent(body.map[youtubeSoundKey])}`);
-    let body2 = await res2.blob()
-    audioElement.src = URL.createObjectURL(body2)
+    let body2 = await res2.blob();
+    audioElement.src = URL.createObjectURL(body2);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
@@ -49,11 +49,11 @@ export async function fetchFreeSound(){
   let freeSoundId = randomIdFinder(6, 682339)
   const freeSoundAPI = `https://beatmeupproxy.onrender.com/freesound?id=${freeSoundId}`
   try {
-    let res = await fetch(freeSoundAPI)
+    let res = await fetch(freeSoundAPI);
     let body = await res.json();
     audioElement.src = body.previews['preview-hq-mp3'];
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 

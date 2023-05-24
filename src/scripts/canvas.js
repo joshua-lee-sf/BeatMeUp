@@ -29,7 +29,7 @@ let xPos;
 let disconnected = true;
 
 // visualizer event listener for change
-let visualizerShapeSelector = document.getElementById('shape-selector')
+let visualizerShapeSelector = document.getElementById('shape-selector');
 
 visualizerShapeSelector.addEventListener('change', drawSelector);
 
@@ -37,7 +37,7 @@ visualizerShapeSelector.addEventListener('change', drawSelector);
 export function visualizer(drawerFunc){
   function animation(){
     xPos = 0;
-    canvasCtx.clearRect(0,0,canvas.width, canvas.height)
+    canvasCtx.clearRect(0,0,canvas.width, canvas.height);
     analyzer.getByteFrequencyData(dataArray);
     drawerFunc(bufferLength, xPos, barWidth, barHeight, dataArray);
     requestAnimationFrame(animation);
