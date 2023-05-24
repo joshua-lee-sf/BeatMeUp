@@ -40,7 +40,6 @@ export async function fetchYoutubeSound() {
     console.log(body.map[youtubeSoundKey])
     let res2 = await fetch(`https://beatmeupproxy.onrender.com/youtubesounds?url=${encodeURIComponent(body.map[youtubeSoundKey])}`);
     let body2 = await res2.blob()
-    console.log(URL.createObjectURL(body2))
     audioElement.src = URL.createObjectURL(body2)
   } catch (error) {
     console.log(error)

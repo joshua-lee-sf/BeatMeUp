@@ -1,11 +1,10 @@
-import {visualizer, drawSelector} from './scripts/canvas';
-import {circularDrawer, rectangularDrawer} from './scripts/drawer';
+import { drawSelector} from './scripts/canvas';
 import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/audio';
 
 let audioAPISelector = document.getElementById('music-api-selector')
 let generateRandomSound = document.getElementById('random-api-sound-generator')
 let audioElement = document.getElementById('audio-element')
-audioElement.volume = 0.2;
+audioElement.volume = 0;
 let visualizerShape = document.getElementById('shape-selector')
 
 

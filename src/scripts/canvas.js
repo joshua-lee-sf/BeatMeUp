@@ -16,7 +16,7 @@ const canvasCtx = canvas.getContext('2d');
 //audio set up
 const audioElement = document.getElementById('audio-element');
 const audioContext = new AudioContext();
-let analyzer = audioContext.createAnalyser();;
+let analyzer = audioContext.createAnalyser();
 let audioSource;
 
 analyzer.fftSize = fftSizeValue;
