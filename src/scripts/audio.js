@@ -37,7 +37,6 @@ export async function fetchYoutubeSound() {
     let body = await res.json();
     let randomId = randomIdFinder(0, 5142);
     let youtubeSoundKey = body.arr[randomId];
-    console.log(body.map[youtubeSoundKey])
     let res2 = await fetch(`https://beatmeupproxy.onrender.com/youtubesounds?url=${encodeURIComponent(body.map[youtubeSoundKey])}`);
     let body2 = await res2.blob()
     audioElement.src = URL.createObjectURL(body2)
