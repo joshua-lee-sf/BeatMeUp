@@ -26,13 +26,14 @@
     <div class="customizer-container">
     <div class="instructions">
       <h4>Instructions</h4>
-      <ul id="instructions list">
+      <ul id="instructions-list">
         <li>Welcome to my JavaScript Project!</li>
         <li>This is a sound visualizer that uses Web Audio API, Canvas API, Jamendo API, FreeSounds API, Google Audio Library API</li>
         <li>Use the Customize Visualizer Menu to customize the visualizer to your liking</li>
         <li>Use the Music Options Menu to select the media output</li>
         <li>Press play and watch the magic happen!</li>
         <li>You can customize the visualizer as music is playing!</li>
+        <li>If there are no visuals on the canvas, make sure <span>shape</span>, <span>bar amount</span>, and <span>size</span> is selected</li>
       </ul>
     </div>
 
@@ -40,14 +41,15 @@
       <h4>Customize Visualizer</h4>
       <label>Shape: 
       <select id="shape-selector">
-        <option selected disabled>Select a shape for the Visualizer</option>
+        <option selected disabled>-- Select a shape for the visualizer --</option>
         <option value="rectangle" >Bars</option>
         <option value="circle">Circular</option>
       </select>
     </label>
       <label> Bar Amount
         <select id="bar-amount">
-          <option value="32" selected>32</option>
+          <option selected value="32768" disabled>-- Select number of bars --</option>
+          <option value="32">32</option>
           <option value="64">64</option>
           <option value="128">128</option>
           <option value="256">256</option>
@@ -57,12 +59,11 @@
           <option value="4096">4096</option>
           <option value="8192">8192</option>
           <option value="16384">16384</option>
-          <option value="32768">32768</option>
         </select>
       </label>
       <label>Size
         <select id="size">
-          <option selected disabled>Please Select a Size</option>
+          <option selected disabled>-- Please Select a Size --</option>
           <option value="1">Small</option>
           <option value="3">Medium</option>
           <option value="5">Large</option>
@@ -102,6 +103,7 @@
       <button id="random-api-sound-generator">Generate a Random Sound</button>
       <label>
         <input type="file" accept="audio/*" id="music-upload" value="Upload A Song">
+        <p id="upload-warning">No need to upload music for app to work!</p>
     </div>
     </div>
 

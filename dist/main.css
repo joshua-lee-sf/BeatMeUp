@@ -98,11 +98,19 @@ header {
   /* margin: 1000px; */
 }
 
+#bar-amount, #size, #shape-selector {
+  text-align: center;
+}
+
 .visual {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin-right: 100px;
+}
+
+#upload-warning {
+  margin-top: 5px;
 }
 
 .customizer-container {
@@ -338,4 +346,9 @@ select {
 
 #music-upload:hover, button:hover {
   opacity: 1;
+}
+
+#instructions-list li span {
+  font-weight: 800;
+  color: #00D5D5;
 }

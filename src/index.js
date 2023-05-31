@@ -4,20 +4,38 @@ import {fetchJamendoSound, fetchYoutubeSound, fetchFreeSound} from './scripts/au
 let audioAPISelector = document.getElementById('music-api-selector')
 let generateRandomSound = document.getElementById('random-api-sound-generator')
 let audioElement = document.getElementById('audio-element')
-audioElement.volume = 0;
+audioElement.volume = 0.2;
+
 let visualizerShape = document.getElementById('shape-selector')
-
-
-
+const barSize = document.getElementById('size');
+let fftSizeInput = document.getElementById('bar-amount');
 
 //bring into index.js
 audioAPISelector.addEventListener('input', function(){
   if (audioAPISelector.value === 'jamendoAPI') { 
-    generateRandomSound.addEventListener('click', fetchJamendoSound);
+    generateRandomSound.addEventListener('click', () => {
+      if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
+        alert('Please select a bar size, fft size, and visualizer shape')
+      }
+      else {
+      fetchJamendoSound();
+    }});
   } else if (audioAPISelector.value === 'youtube-audio-library') {
-    generateRandomSound.addEventListener('click', fetchYoutubeSound)
+    generateRandomSound.addEventListener('click', ()=> {
+      if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
+        alert('Please select a bar size, fft size, and visualizer shape')
+      }
+      else {
+      fetchYoutubeSound();
+    }});
   } else {
-    generateRandomSound.addEventListener('click', fetchFreeSound)
+    generateRandomSound.addEventListener('click', () => {
+      if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
+        alert('Please select a bar size, fft size, and visualizer shape')
+      }
+      else {
+      fetchFreeSound();
+    }});
   }
 })
 

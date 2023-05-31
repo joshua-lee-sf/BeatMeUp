@@ -5,9 +5,9 @@ canvas.height = canvas.clientHeight; // might change
 
 const barSize = document.getElementById('size');
 let barMultipler;
+
 barSize.addEventListener('input', function(){
   barMultipler = barSize.value;
-
 })
 
 const hue = document.getElementById('hue-slider');
@@ -40,7 +40,7 @@ const rainbowBoolFalse = document.getElementById('rainbow-f');
 const rainbowBoolTrue = document.getElementById('rainbow-t');
 let plainOrRainbowValue;
 
-rainbowBoolTrue.addEventListener('input', function(e){
+rainbowBoolTrue.addEventListener('change', function(e){
   plainOrRainbowArray.forEach(option => {
     if (option.checked) {
       plainOrRainbowValue = option.value;
@@ -48,7 +48,7 @@ rainbowBoolTrue.addEventListener('input', function(e){
   });
 })
 
-rainbowBoolFalse.addEventListener('input', function(e){
+rainbowBoolFalse.addEventListener('change', function(e){
   plainOrRainbowArray.forEach(option => {
     if (option.checked) {
       plainOrRainbowValue = option.value;
