@@ -15,7 +15,7 @@ audioAPISelector.addEventListener('input', function(){
   if (audioAPISelector.value === 'jamendoAPI') { 
     generateRandomSound.addEventListener('click', () => {
       if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
-        alert('Shape, bar amount, or size is empty! Please select an option')
+        alert('Shape, bar amount, or size is empty! Please select an option');
       }
       else {
       fetchJamendoSound();
@@ -23,7 +23,7 @@ audioAPISelector.addEventListener('input', function(){
   } else if (audioAPISelector.value === 'youtube-audio-library') {
     generateRandomSound.addEventListener('click', ()=> {
       if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
-        alert('Shape, bar amount, or size is empty! Please select an option')
+        alert('Shape, bar amount, or size is empty! Please select an option');
       }
       else {
       fetchYoutubeSound();
@@ -31,7 +31,7 @@ audioAPISelector.addEventListener('input', function(){
   } else {
     generateRandomSound.addEventListener('click', () => {
       if(!barSize.value || fftSizeInput.value === '32768' || !visualizerShape.value){
-        alert('Shape, bar amount, or size is empty! Please select an option')
+        alert('Shape, bar amount, or size is empty! Please select an option');
       }
       else {
       fetchFreeSound();
