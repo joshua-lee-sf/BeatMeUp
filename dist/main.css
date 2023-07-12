@@ -93,6 +93,7 @@ header {
 .content-container {
   display: flex;
   justify-content: center;
+  /* flex-wrap: wrap; */
   /* position: absolute; */
   /* flex-direction: row; */
   /* margin: 1000px; */
