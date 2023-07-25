@@ -100,10 +100,12 @@
         <option value="jamendoAPI">Jamendo</option>
         <option value="youtube-audio-library">Youtube Audio Library</option>
       </select>
-      <button id="random-api-sound-generator">Generate a Random Sound</button>
-      <label>
-        <input type="file" accept="audio/*" id="music-upload" value="Upload A Song">
-        <p id="upload-warning">No need to upload music for app to work!</p>
+      <div class="random-sound-generator-options">
+        <button id="random-api-sound-generator">Generate a Random Sound</button>
+        <label id="music-upload-label" for="music-upload">Upload a song</label>
+        <input type="file" accept="audio/*" id="music-upload" style="display:none">
+      </div>
+      <p id="upload-warning">No need to upload music for app to work!</p>
     </div>
     </div>
 

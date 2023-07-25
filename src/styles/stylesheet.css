@@ -25,18 +25,14 @@ header {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 6px;
-  height: 55px;
   background-color: #6A6464;
-  overflow: hidden;
-  /* position: fixed; */
 }
 
 .content-container{
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
+  flex-direction: row;
   /* position: absolute; */
-  /* flex-direction: row; */
   /* margin: 1000px; */
 }
 
@@ -47,8 +43,13 @@ header {
 .visual{
   display: flex;
   flex-direction: column;
-  width: 70%;
   margin-right: 100px;
+  border: 1px white solid;
+  width: 70%;
+  max-width: 2000px;
+  min-width: 500px;
+  min-height: 500px;
+  margin-top: 20px;
 }
 
 #upload-warning{
@@ -58,9 +59,9 @@ header {
 .customizer-container{
   display: flex;
   flex-direction: column;
-  /* width: 30%; */
-  /* max-height: 980px;
-  margin-left: 100px; */
+  width: 30%;
+  max-width: 1500px;
+  min-width: 330px;
 }
 
 h1{
@@ -261,40 +262,111 @@ select:hover, a:hover, input:hover, button:hover{
   cursor: pointer;
 }
 
-#music-upload input[type=file]{
-  visibility: none;
-}
-
 select{
   padding: 3px;
   border-radius: 10px;
   margin: 2px;
 }
 
-#music-upload, button{
+.random-sound-generator-options{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#random-api-sound-generator, #music-upload-label{
   background: white;
   color: black;
   padding: 8px 15px;
   border-radius: 10px;
   letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 1em;
   cursor: pointer;
   display: inline-block;
   vertical-align: center;
   text-align: center;
   margin-top: 5px;
   opacity: 0.7;
-  /* width: 50%; */
+  /* max-width: 70%; */
+  width: 230px;
+  text-transform: none;
+  /* box-shadow: 1px 1px 1px black; */
 }
+
+#random-api-sound-generator{
+  width: 260px;
+  box-shadow: none;
+}
+
+#music-upload-label{
+  box-shadow: 2px 2px 2px black;
+}
+
+
+#hidden{
+  display: none;
+}
+
 
 ::file-selector-button {
   display: none;
 }
 
-#music-upload:hover, button:hover{
+#music-upload-label:hover, #random-api-sound-generator:hover{
   opacity: 1;
 }
 
 #instructions-list li span{
   font-weight: 800;
   color: #00D5D5;
+}
+
+@media (max-width: 768px){
+  .content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  header{
+    font-size: 0.3em;
+    text-align: center;
+    width: 100%;
+  } 
+
+  .visual{
+    height: 50vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  audio{
+    margin-left: 12em;
+  }
+
+  .customizer-container{
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  header{
+    margin-top: 1px;
+  }
+
+  .content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .visual{
+    height: 90vh;
+  }
 }
